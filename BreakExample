@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class BreakExample {
+    public static void main(String[] args) {
+        // Ejemplo de uso de break
+        System.out.println("Ejemplo de un Break");
+        int i = 0;
+        while (i <= 20) {
+            i++;
+            if (i % 5 == 0) {
+                break;
+            }
+            System.out.println(i);
+        }
+
+        // Ejemplo de uso de continue
+        System.out.println("Ejemplo de continue");
+        i = 0;
+        while (i <= 20) {
+            i++;
+            if (i % 5 == 0) {
+                continue;
+            }
+            System.out.println(i);
+        }
+    }
+}
