@@ -1,0 +1,27 @@
+package Lab7;
+
+import java.util.Scanner;
+
+public class ContarCifras {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Solicitar un número entre 0 y 9.999
+        System.out.print("Ingrese un número entre 0 y 9.999: ");
+        int numero = scanner.nextInt();
+        
+        // Validar el rango del número
+        if (numero < 0 || numero > 9999) {
+            System.out.println("Número fuera del rango permitido.");
+        } else {
+            // Contar las cifras
+            int cifras = (int) Math.log10(numero) + 1;
+            if (numero == 0) {
+                cifras = 1; // El número 0 tiene 1 cifra
+            }
+            System.out.printf("El número %d tiene %d cifra(s).%n", numero, cifras);
+        }
+        
+        scanner.close();
+    }
+}
