@@ -1,0 +1,24 @@
+package Lab7;
+import java.util.Scanner;
+
+public class OrdenarNumeros {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Solicitar los dos números
+        System.out.print("Ingrese el primer número: ");
+        int numero1 = scanner.nextInt();
+        
+        System.out.print("Ingrese el segundo número: ");
+        int numero2 = scanner.nextInt();
+        
+        // Ordenar y mostrar los números
+        if (numero1 > numero2) {
+            System.out.printf("Los números en orden de mayor a menor son: %d, %d%n", numero1, numero2);
+        } else {
+            System.out.printf("Los números en orden de mayor a menor son: %d, %d%n", numero2, numero1);
+        }
+        
+        scanner.close();
+    }
+}
