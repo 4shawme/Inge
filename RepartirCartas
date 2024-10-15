@@ -1,0 +1,51 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class RepartirCartas {
+    
+    public static void main(String[] args) {
+        PaqueteDeCartas miPaqueteDeCartas = new PaqueteDeCartas();
+        miPaqueteDeCartas.barajar(); // Barajar las cartas
+        
+        // Repartir e imprimir las 52 cartas en el orden en que se reparten
+        for (int i = 1; i <= 52; i++) {
+            System.out.print(miPaqueteDeCartas.repartirCarta());
+            
+            // Imprimir una coma si no es la cuarta carta de la línea
+            if (i % 4 != 0) {
+                System.out.print(", ");
+            } else {
+                // Imprimir una nueva línea después de cada cuatro cartas
+                System.out.println();
+            }
+        }
+    }
+}
+
+class PaqueteDeCartas {
+    private List<String> cartas = new ArrayList<>();
+
+    // Constructor
+    public PaqueteDeCartas() {
+        String[] palos = { "Corazones", "Diamantes", "Treboles", "Espadas" };
+        String[] valores = { "As", "Dos", "Tres", "Cuatro", "Cinco", "Seis", "Siete", "Ocho", "Nueve", "Diez", "Jota", "Reina", "Rey" };
+        
+        // Crear el paquete de cartas
+        for (String palo : palos) {
+            for (String valor : valores) {
+                cartas.add(valor + " de " + palo);
+            }
+        }
+    }
+
+    // Método para barajar las cartas
+    public void barajar() {
+        Collections.shuffle(cartas);
+    }
+
+    // Método para repartir una carta
+    public String repartirCarta() {
+        return cartas.remove(0);
+    }
+}
